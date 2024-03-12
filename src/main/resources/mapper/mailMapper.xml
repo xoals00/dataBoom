@@ -1,0 +1,51 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.projectFinal.dao.NoteDao">
+
+	<insert id="mailsend">
+		insert into
+		NoteTableT(recv_userId,send_userId,n_title,n_message,status)
+		values(#{recv_userId},#{send_userId},#{n_title},#{n_message},#{status})
+
+	</insert>
+
+	<select id="NoteInfo">
+		select * from NoteTableT where recv_userId = #{userId} order by n_num
+		DESC
+		limit 10;
+	</select>
+	
+	<select id="adminInq">
+		select * from NoteTableT where recv_userId = #{userId} and status = 1 order by n_num
+		DESC
+		limit 20;
+	</select>
+	
+
+	<select id="inqMain">
+		select * from NoteTableT where send_userId= #{userId} order by n_num DESC;
+	</select>
+	<select id="eventMessage">
+		select * from NoteTableT where recv_userId= #{userId} order by n_num DESC;
+	</select>
+
+	<delete id="DeleteNote">
+		delete from NoteTableT where n_num = #{n_num}
+	</delete>
+
+	<select id="findId">
+		select count(*) from NoteTableT
+		FULL join memberT
+		where memberT.userId = #{send_userId};
+	</select>
+	
+	<select id="inqDetailView">
+		select * from NoteTableT where n_num = #{n_num};
+	</select>
+
+	<update id="inqAnswer">
+		UPDATE NoteTableT SET n_title = #{n_title}, inqAnswer = #{inqAnswer},  n_date =#{n_date} ,status = #{status} where n_num = #{n_num}
+	</update>
+
+
+</mapper>

@@ -1,0 +1,335 @@
+.modal0-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none;
+	backdrop-filter: none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal1-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none;
+	backdrop-filter: none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal2-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none;
+	backdrop-filter: none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal3-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none;
+	backdrop-filter: none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.modal4-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none; backdrop-filter : none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	backdrop-filter: none;
+}
+.modal5-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	box-shadow: none; backdrop-filter : none;
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	backdrop-filter: none;
+}
+
+.modal0-window {
+	background: white;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+	backdrop-filter: none;
+	border-radius: 10px;
+	width: 700px;
+	height: 400px;
+	position: relative;
+	z-index: 100;
+}
+
+.modal1-window {
+	font-family: 'Jua', sans-serif;
+	background: white;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+	backdrop-filter: none;
+	border-radius: 10px;
+	width: 1000px;
+	height: 800px;
+	position: relative;
+	z-index: 100;
+}
+
+.modal2-window {
+	font-family: 'Jua', sans-serif;
+	background: white;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+	backdrop-filter: none;
+	border-radius: 10px;
+	width: 1000px;
+	height: 800px;
+	position: relative;
+	z-index: 100;
+}
+
+.modal3-window {
+	font-family: 'Jua', sans-serif;
+	background: #e3f2fd;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+	backdrop-filter: none;
+	border-radius: 10px;
+	width: 800px;
+	height: 500px;
+	position: relative;
+	z-index: 100;
+}
+
+.modal4-window {
+	font-family: 'Jua', sans-serif;
+	background: #e3f2fd;
+	box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+	backdrop-filter: none;
+	border-radius: 10px;
+	width: 800px;
+	height: 500px;
+	position: relative;
+	z-index: 100;
+}
+.modal5-window {
+    font-family: 'Jua', sans-serif;
+    background: ghostwhite;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.22);
+    backdrop-filter: none;
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    position: relative;
+    z-index: 100;
+}
+
+.modal-title {
+	padding-left: 10px;
+	display: inline;
+	text-shadow: 1px 1px 2px gray;
+	color: black;
+}
+.modal5-title{
+	width : 100%;
+	position: relative;
+	top : 25px;
+    border-bottom: 2px solid lightgray;
+    text-align: center;
+}
+
+/* #modal1 .title h2 { */
+/* 	display: inline; */
+/* } */
+.modal-close-area {
+	display: inline;
+	float: right;
+	padding-right: 10px;
+	cursor: pointer;
+	font-size: 20px;
+	color: black;
+	margin-top: 5px;
+}
+
+.modal0-content {
+	margin-top: 20px;
+	padding: 0px 10px;
+	text-shadow: 1px 1px 2px black;
+	color: black;
+}
+
+.modal3-content {
+	margin-top: 20px;
+	padding: 0px 10px;
+	text-shadow: 1px 1px 2px gray;
+	color: white;
+	/* 	width: 500px; */
+	border: none;
+}
+
+.modal4-content {
+	margin-top: 20px;
+	padding: 0px 10px;
+	color: black;
+	border: none;
+}
+.table table-green table-hover{
+	background-color: whitesmoke;
+}
+.thead {
+	width: 60px;
+	height: 20px;
+}
+
+.thead-title {
+	position: relative;
+	top: 10px;
+}
+
+.thead-message {
+	position: relative;
+	height: 150px;
+	top: 15px;
+}
+
+.thead-answer {
+	position: relative;
+	height: 150px;
+	top: 20px;
+}
+
+.title {
+	position: relative;
+	top: 10px;
+}
+
+.message {
+	position: relative;
+	top: 15px;
+}
+
+.answer {
+	position: relative;
+	top: 20px;
+}
+
+.titleArea {
+	font-size: 25px;
+	position: relative;
+}
+
+.messageArea {
+	position: relative;
+}
+
+.inqTitle {
+	width: 680px;
+	height: 40px;
+	font-size: 20px;
+	border: 1px solid #e5e5e5;
+}
+
+.inqMessage {
+	border: 1px solid #e5e5e5;
+}
+
+.AnserTitle {
+	font-size: 25px;
+	color: black;
+}
+
+.inqAnswer {
+	border: 1px solid #e5e5e5;
+}
+
+.inqAnswerBtn {
+	background: none;
+	border: 1px solid #e5e5e5;
+}
+
+.inq-nav-itemleft {
+	width: 350px;
+	height: 100%;
+	float: left;
+}
+.trTime{
+	position: relative;
+	margin-top : 10px; 
+}
+.EtitleArea{
+	width : 100%;
+	position : relative;
+	top : 20px;
+}
+.SendTimeArea{
+	width : 100%;
+	height : 30px;
+	position : relative;
+	top : 33px;
+	border-top : 1px solid lightgray;
+	border-bottom : 1px solid lightgray;
+}
+.SendTimeArea2{
+	width : 340px;
+	height : 30px;
+	position : relative;
+	top : 33px;
+	border-top : 1px solid lightgray;
+	border-bottom : 1px solid lightgray;
+}
+/* .messageline0{ */
+/* 	width : 60px; */
+/* } */
+/* .messageline{ */
+/* 	top : 20px; */
+/* 	width : 340px; */
+/* 	height : 350px; */
+/* 	position: relative; */
+/* 	left : 3px; */
+/* 	border-bottom : 1px solid lightgray; */
+/* } */

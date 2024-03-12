@@ -1,0 +1,32 @@
+.inqnav {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	height: 120px;
+	float: left;
+}
+
+.inq-nav-item {
+	width: 100px;
+	height: 49px;
+	float: left;
+	padding: 10px;
+	border: none;
+	background: none;
+	margin-top: 70px;
+}
+
+.modal-back-img {
+	width: 100%;
+	height: 100%;
+	background-image:
+		url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTToIEc5qdcAOPQHJPvfKSHELHtBDFueIlVww&usqp=CAU);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: auto;
+}
+
+.BackColor {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+}

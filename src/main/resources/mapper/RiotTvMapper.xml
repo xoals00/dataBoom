@@ -1,0 +1,68 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.projectFinal.dao.WebDao">
+
+
+
+	<insert id="dbSaveInfoRiotTv">
+
+		replace into
+		riottvT(matchId,championName,teamId,teamName,kills,assists,deaths,kda,totalTimeSpentDead,visionWardsBoughtInGame
+		,visionScore,win,gameStartTimestamp,riotIdGameName,riotIdTagline,goldEarned,totalDamageDealtToChampions,
+		totalMinionsKilled,wardsPlaced,puuid,championId,koChampionName,
+		participantId,winCheck,queueId)
+
+		values(#{matchId},#{championName},#{teamId},#{teamName},#{kills},#{assists},#{deaths},#{kda},#{totalTimeSpentDead},#{visionWardsBoughtInGame}
+		,#{visionScore},#{win},#{gameStartTimestamp},#{riotIdGameName},#{riotIdTagline},#{goldEarned},#{totalDamageDealtToChampions},
+		#{totalMinionsKilled},#{wardsPlaced},#{puuid},#{championId},(select
+		champion_name_kr from cn_kr where championId =
+		#{championId}),#{participantId},#{winCheck},#{queueId});
+
+
+
+	</insert>
+
+	<select id="dbFindData">
+
+		select matchId
+		from riottvT
+		where riotIdGameName=#{gameName} and riotIdTagline=#{tagLine}
+		order by gameStartTimestamp desc,participantId
+		limit #{matchIdCnt};
+
+	</select>
+	
+
+	<select id="matchIdRecent">
+
+		select matchId 
+		from riottvT 
+		where riotIdGameName = #{gameName} 
+		order by gameStartTimestamp desc 
+		limit #{startValue},#{matchIdCnt};
+
+	</select>
+
+
+	<select id="newDataInfo">
+
+		select * 
+		from riottvT 
+		where riotIdGameName = #{gameName} 
+		order by gameStartTimestamp desc 
+		limit #{startValue},#{matchIdCnt};
+
+	</select>
+
+
+	<select id="forGraphInfo">
+
+		select * 
+		from riottvT 
+		where matchId = #{matchIdSolo}
+		order by participantId ;
+
+	</select>
+
+
+</mapper>

@@ -1,0 +1,42 @@
+.container1{
+	border : 3px solid lightgray;
+	width : 450px;
+	height : 400px;
+	position: relative;
+	left : 700px;
+	top : 200px;
+	background : #e5e5e5;
+}
+.container2{
+	padding: 33px;
+}
+.Title{
+	font-size : 25px;
+	color : black;
+	font-weight: 300;
+}
+.Message{
+	font-size : 25px;
+	color : black;
+	font-weight: 300;
+}
+.inTitle{
+	border : 1px solid #e5e5e5;
+	width : 367px;
+	height : 30px;
+}
+.messageArea{
+	border : 1px solid #e5e5e5;
+}
+.sendBtn{
+	font-size : 18px;
+	background : none;
+	width : 60px;
+	height : 30px;
+	border: 1px solid black;
+}
+a{
+	font-size : 18px;
+	color : black;
+	text-decoration: none;
+}

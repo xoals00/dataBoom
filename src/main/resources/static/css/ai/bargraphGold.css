@@ -1,0 +1,25 @@
+
+.goldProgress-bar {
+    width: 200px;
+    height: 30px;
+    background-color: #ff0000;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.goldProgress {
+    width: 50%;  
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #4f98ff;
+    color: #111;
+}
+
+.forMoveBar {
+ 
+ position: absolute;
+ top : 22%;
+ left : 13%;
+ 
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.project.projectFinal.dao.ChampDao">
+
+	<select id="champRank">
+
+		SELECT *
+		FROM champTierRankT
+		WHERE teamPosition =
+		#{teamPosition} and tier =#{tier}
+		order by win_total_cnt desc
+		limit 40;
+
+	</select>
+
+	<select id="laneListInfo">
+
+		SELECT *
+		FROM champListT
+		where line like
+		concat('%',#{teamPosition}, '%')
+
+	</select>
+
+	<select id="ranktierlistInfo">
+		SELECT *
+		FROM
+		${tier}_rankListT
+		WHERE teamPosition =
+		#{teamPosition} AND championId = #{championId}
+	</select>
+	
+	
+	<select id="allChampTierCnt">
+		select count(*) from ${tier}_rankListT where
+		teamPosition =
+		#{teamPosition} ;
+
+	</select>
+	<select id="banChampTierCnt">
+		select count(*)
+		from ${tier}_rankListT
+		where
+		ban_champion_name_kr = #{champion_name_kr};
+
+	</select>
+	
+
+	<insert id="saveChampTierRankT">
+
+		REPLACE into
+		champTierRankT(teamPosition,champion_name
+		,champion_name_kr,pick_rate
+		,win_rate,win_total_cnt
+		,champion_pick,ban_rate,tier)
+
+		values(#{teamPosition},#{champion_name},#{champion_name_kr}
+		,#{pick_rate},#{win_rate},#{win_total_cnt}
+		,#{champion_pick},#{ban_rate},#{tier} )
+
+	</insert>
+
+
+<!-- 	<select id="laneCounterListInfo"> -->
+<!-- 		SELECT * -->
+<!-- 		FROM champListT -->
+<!-- 		where line like -->
+<!-- 		concat('%',#{teamPosition}, '%') -->
+<!-- 	</select> -->
+
+
+<!-- 	<select id="rankListInfo"> -->
+<!-- 		select -->
+<!-- 		T1.championName, -->
+<!-- 		T1.champion_name_kr, -->
+<!-- 		SUM(CASE -->
+<!-- 		WHEN T1.win = 1 THEN 1 ELSE 0 END) AS champ_win_cnt, -->
+<!-- 		ROUND((SUM(CASE -->
+<!-- 		WHEN T1.win = 1 THEN 1 ELSE 0 END) / COUNT(*)) -->
+<!-- 		* 100, 2) AS -->
+<!-- 		champ_win_rate, -->
+<!-- 		T2.championName AS enemy_championName, -->
+<!-- 		T2.champion_name_kr As enemy_championName_kr, -->
+<!-- 		T2.teamPosition, -->
+<!-- 		SUM(CASE -->
+<!-- 		WHEN T2.win = 1 THEN 1 ELSE 0 END) AS enemy_champ_win_cnt, -->
+<!-- 		count(*) AS -->
+<!-- 		total, -->
+<!-- 		ROUND((SUM(CASE WHEN T2.win = 1 THEN 1 ELSE 0 END) / COUNT(*)) * -->
+<!-- 		100, -->
+<!-- 		2) AS -->
+<!-- 		enemy_win_rate, -->
+<!-- 		T2.tier -->
+<!-- 		FROM (SELECT * FROM emerald_rankListT -->
+<!-- 		WHERE -->
+<!-- 		championId = #{championId}) T1 JOIN -->
+<!-- 		(SELECT * FROM -->
+<!-- 		emerald_rankListT) T2 -->
+<!-- 		ON -->
+<!-- 		T1.match_id=T2.match_id AND T1.teamPosition = -->
+<!-- 		T2.teamPosition -->
+<!-- 		WHERE -->
+<!-- 		T1.championId!=T2.championId and -->
+<!-- 		T1.teamPosition=#{teamPosition} -->
+<!-- 		GROUP -->
+<!-- 		BY T1.championId ,T2.championId -->
+<!-- 		order by total desc -->
+<!-- 		limit 10; -->
+<!-- 	</select> -->
+
+<!-- 	<insert id="saveChampCounterT"> -->
+
+<!-- 		REPLACE into champCountertest(championName, -->
+<!-- 		champion_name_kr,champ_win_cnt,champ_win_rate,enemy_championName,enemy_championName_kr,teamPosition,enemy_champ_win_cnt,total,enemy_win_rate,tier) -->
+
+<!-- 		values(#{championName}, -->
+<!-- 		#{champion_name_kr},#{champ_win_cnt},#{champ_win_rate}, -->
+<!-- 		#{enemy_championName},#{enemy_championName_kr},#{teamPosition},#{enemy_champ_win_cnt}, -->
+<!-- 		#{total},#{enemy_win_rate},#{tier} ) -->
+
+<!-- 	</insert> -->
+
+<!-- 	<select id="CounterchampList"> -->
+<!-- 		select * from champCountertest WHERE -->
+<!-- 		championName = -->
+<!-- 		#{championName} -->
+<!-- 	</select> -->
+
+	<select id="forGraphInfo">
+		select * from champTierRankT WHERE
+		champion_name =
+		#{championName}
+	</select>
+
+	<select id="forGraphInfo2">
+		select * from champTierRankT WHERE
+		teamPosition = #{teamPosition} and tier=#{tier}
+		order by pick_rate desc limit 10;
+	</select>
+
+</mapper>
